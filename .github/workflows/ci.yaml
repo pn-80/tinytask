@@ -87,6 +87,7 @@ jobs:
   push-to-dockerhub:
     needs: docker-smoke-test
     runs-on: ubuntu-latest
+    environment: Lab6_cicd
 
     steps:
       - name: Checkout repository
