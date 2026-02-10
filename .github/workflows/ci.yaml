@@ -119,6 +119,7 @@ jobs:
   deploy-to-dokploy:
     needs: push-to-dockerhub
     runs-on: ubuntu-latest
+    environment: Lab6_cicd
 
     steps:
       # 15. Trigger Dokploy to pull the new image
@@ -128,4 +129,3 @@ jobs:
             -H "x-api-key: ${{ secrets.DOKPLOY_API_KEY }}" \
             -H "Content-Type: application/json" \
             -d '{"applicationId": "${{ secrets.DOKPLOY_APP_ID }}"}'
-#Pass
